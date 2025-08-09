@@ -1,3 +1,6 @@
+
+github password - Upgrade 1234@
+question - create a user deepak and password ltimindtree make deep sudo so that he can add jk
 useradd deepak 
 passwd deepak
 enter password
@@ -10,4 +13,12 @@ to save and exit press esc+ colon+w+q+!+enter
 login as deepak
 then we have to login as deepak : sudo su - Deepak
 sudo useradd jk
-cat/etc/passwd | grep -i jk
+cat /etc/passwd | grep -i jk
+
+question - create a user Ramesh . Add him to nobody and wheel group
+useradd Ramesh
+passwd Ramesh
+cat /etc/group | grep -i nobody 
+cat /etc/group | grep -i wheel
+usermod -G wheel Ramesh
+cat /etc/group | grep -i ramesh
