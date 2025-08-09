@@ -1,0 +1,11 @@
+[root@git ~]# useradd dona
+[root@git ~]# passwd dona
+Changing password for user dona.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password:
+Sorry, passwords do not match.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password:
+passwd: all authentication tokens updated successfully.
