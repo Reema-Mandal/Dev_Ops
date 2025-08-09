@@ -579,6 +579,51 @@ Aug 09 05:51:30 git.html systemd[1]: Started jenkins.service - Jenkins Continuou
 Aug 09 05:51:30 git.html jenkins[29783]: 2025-08-09 05:51:30.230+0000 [id=46]        INFO        h.m.DownloadService$Downloadable#load: Obtained th>
 Aug 09 05:51:30 git.html jenkins[29783]: 2025-08-09 05:51:30.231+0000 [id=46]        INFO        hudson.util.Retrier#start: Performed the action ch>
 lines 1-20/20 (END)
+control + c
 [root@git gitt]# cat /var/lib/jenkins/secrets/initialAdminPassword
 09e4684f7cf145558598dcf9032055e4 / This has to be pasted jenkins
-[root@git gitt]#
+instal suggested files
+start jenkins
+goto terminal
+df -h
+
+google increase linux tmp folder size
+copy first code
+replace x with 5
+paste first code
+
+vim /etc/fstab
+violet appears
+click i
+copy second code
+paste second code 
+5G
+escape+:+w+W+!+enter
+
+df -h
+open instance
+reboot instance
+go to google
+paste new ipv4 :8080
+sign in
+
+goto terminal
+reconnect the instance
+#DONE
+
+
+yum install git -y
+git init
+yum install maven
+mvn - v now came java url we have to copy and go to tools in jenkins and add jdk and give namw
+go to jenkins and install 3 plugins mayven github integration and deploy to container
+copy the maven url and paste in the maven option apply and save
+go to github go to repo 
+git remote add origin go to github and copy ssh link and paste in terminal
+git remote -v
+go to git repo settings go to webhooks copy jenkins url and  paste  in webhooks playload url followed by /github-webhook/ then in content type 
+add application jason add webhook and then goto jenkins  click profile go to security add new token give name click generate
+copy the code paste in github secret go to jenkins click done click apply click save go to github paste in secret click done
+
+go to jenkins home page create new item  give name select mayven project click ok give git and go to terminal push a file
+
