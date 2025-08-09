@@ -579,3 +579,6 @@ Aug 09 05:51:30 git.html systemd[1]: Started jenkins.service - Jenkins Continuou
 Aug 09 05:51:30 git.html jenkins[29783]: 2025-08-09 05:51:30.230+0000 [id=46]        INFO        h.m.DownloadService$Downloadable#load: Obtained th>
 Aug 09 05:51:30 git.html jenkins[29783]: 2025-08-09 05:51:30.231+0000 [id=46]        INFO        hudson.util.Retrier#start: Performed the action ch>
 lines 1-20/20 (END)
+[root@git gitt]# cat /var/lib/jenkins/secrets/initialAdminPassword
+09e4684f7cf145558598dcf9032055e4 / This has to be pasted jenkins
+[root@git gitt]#
