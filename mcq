@@ -1,0 +1,13 @@
+useradd deepak 
+passwd deepak
+enter password
+vim /etc/sudoers
+the file will open
+press i to go to insert mode
+search for ALL=(ALL ALL) 
+under this line write : Deepak ALL=(ALL)  /user/sbin/useradd
+to save and exit press esc+ colon+w+q+!+enter
+login as deepak
+then we have to login as deepak : sudo su - Deepak
+sudo useradd jk
+cat/etc/passwd | grep -i jk
