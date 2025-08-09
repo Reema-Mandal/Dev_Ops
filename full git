@@ -1,0 +1,243 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\10839967\Downloads> ssh -i "R_key.pem" ec2-user@ec2-44-203-16-181.compute-1.amazonaws.com
+The authenticity of host 'ec2-44-203-16-181.compute-1.amazonaws.com (44.203.16.181)' can't be established.
+ED25519 key fingerprint is SHA256:yXJUSivmKQzqjG3ThBEcnfhd/3ePw/C2vSAi9xwRQg4.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-44-203-16-181.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-13-27 ~]$ sudo su -
+[root@ip-172-31-13-27 ~]# hostnamectl set-hostname git.html
+[root@ip-172-31-13-27 ~]# bash
+[root@git ~]# mkdir gitt
+[root@git ~]# cd gitt
+[root@git gitt]# yum update git -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                       176 kB/s |  19 kB     00:00
+Package git available, but not installed.
+No match for argument: git
+Error: No packages marked for upgrade.
+[root@git gitt]# yum install git -y
+Last metadata expiration check: 0:00:32 ago on Sat Aug  9 04:36:56 2025.
+Dependencies resolved.
+====================================================================================================================================================
+ Package                              Architecture               Version                                      Repository                       Size
+====================================================================================================================================================
+Installing:
+ git                                  x86_64                     2.50.1-1.amzn2023.0.1                        amazonlinux                      53 k
+Installing dependencies:
+ git-core                             x86_64                     2.50.1-1.amzn2023.0.1                        amazonlinux                     4.9 M
+ git-core-doc                         noarch                     2.50.1-1.amzn2023.0.1                        amazonlinux                     2.8 M
+ perl-Error                           noarch                     1:0.17029-5.amzn2023.0.2                     amazonlinux                      41 k
+ perl-File-Find                       noarch                     1.37-477.amzn2023.0.7                        amazonlinux                      25 k
+ perl-Git                             noarch                     2.50.1-1.amzn2023.0.1                        amazonlinux                      41 k
+ perl-TermReadKey                     x86_64                     2.38-9.amzn2023.0.2                          amazonlinux                      36 k
+ perl-lib                             x86_64                     0.65-477.amzn2023.0.7                        amazonlinux                      15 k
+
+Transaction Summary
+====================================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.9 M
+Installed size: 41 M
+Downloading Packages:
+(1/8): git-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                         1.4 MB/s |  53 kB     00:00
+(2/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                                 1.0 MB/s |  41 kB     00:00
+(3/8): git-core-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                     42 MB/s | 4.9 MB     00:00
+(4/8): perl-File-Find-1.37-477.amzn2023.0.7.noarch.rpm                                                              581 kB/s |  25 kB     00:00
+(5/8): git-core-doc-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                 20 MB/s | 2.8 MB     00:00
+(6/8): perl-Git-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                    1.6 MB/s |  41 kB     00:00
+(7/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                                              1.4 MB/s |  36 kB     00:00
+(8/8): perl-lib-0.65-477.amzn2023.0.7.x86_64.rpm                                                                    601 kB/s |  15 kB     00:00
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                40 MB/s | 7.9 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                            1/1
+  Installing       : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                      1/8
+  Installing       : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                  2/8
+  Installing       : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                      3/8
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                4/8
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                                5/8
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                                 6/8
+  Installing       : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                      7/8
+  Installing       : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                           8/8
+  Running scriptlet: git-2.50.1-1.amzn2023.0.1.x86_64                                                                                           8/8
+  Verifying        : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                           1/8
+  Verifying        : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                      2/8
+  Verifying        : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                  3/8
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                                 4/8
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                                5/8
+  Verifying        : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                      6/8
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                7/8
+  Verifying        : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                      8/8
+====================================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.8.20250808:
+    Run the following command to upgrade to 2023.8.20250808:
+
+      dnf upgrade --releasever=2023.8.20250808
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250808.html
+
+====================================================================================================================================================
+
+Installed:
+  git-2.50.1-1.amzn2023.0.1.x86_64                 git-core-2.50.1-1.amzn2023.0.1.x86_64            git-core-doc-2.50.1-1.amzn2023.0.1.noarch
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch       perl-File-Find-1.37-477.amzn2023.0.7.noarch      perl-Git-2.50.1-1.amzn2023.0.1.noarch
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64      perl-lib-0.65-477.amzn2023.0.7.x86_64
+
+Complete!
+[root@git gitt]# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /root/gitt/.git/
+[root@git gitt]# cat > reema.txt
+gfnh jg n[root@git gitt]#
+[root@git gitt]# cat reema.txt
+gfnh jg n[root@git gitt]#
+[root@git gitt]# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        reema.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@git gitt]# git commit -m "mine"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        reema.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@git gitt]# git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Disable this message with "git config set advice.addEmptyPathspec false"
+[root@git gitt]# git add .
+[root@git gitt]# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   reema.txt
+
+[root@git gitt]# git commit -m" my life"
+[master (root-commit) f50f4db]  my life
+ Committer: root <root@git.html>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 reema.txt
+[root@git gitt]# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:0K0jZm29T8TW+8GO387h8IH/GyGHW2R7bHrwF3i/PLY root@git.html
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|       . .       |
+|      . . .    o |
+|       o o . .=..|
+|      + S . ++oB+|
+|     o o . +  O*=|
+|          . .+o*=|
+|           o  O*O|
+|            ..oE@|
++----[SHA256]-----+
+[root@git gitt]# cd ..
+[root@git ~]# cd .ssh
+[root@git .ssh]# cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCQxiF3hZtCM7YV5rU6kJN4k62B4Gphj67bnVQ5fNKyz+kbKWIypaZty05PEoElLy/PTwge1BGa/gccl+5nonQAvTBLzqEe8ZgqUS0GqDBuqSQ+d6uPR4pwzuLT9aDj9t2fKQP72GZlJkqHXu2jzVA0KT0jnNs1txJYpBPvImSWLELA+4sRqj9cXETRlKUTg8t/y+HGOVtFJ2SZ/6+V9L5ys2JLOP2CIfvkmD5nhxmflqTYARLdGG7FHISU8g3aNpayEVwWsnGDe7CVkKdfT8gisXA4QEG15t3bnPXKr+lDMaaUeWxY60A+TVGT/AwMlbUChsqW4xpUn0cjJXkZ6y10w25ZZDv9WgH3lnpDjMSTW/eE3resOEIBRy5fyBjMtnc+ZQvL3MVrodI0HE3SGGOZ2nmB4WiC5AD4l6PVQcnA9EAKKl6WM9+dvhpQRqC0X1CfIM4AmZcmQDGsIFiscN2eKyMkjCLA6WawGq9b0DAx+QjRUaUjLXdbhU0DfYmDfuU= root@git.html
+[root@git .ssh]# client_loop: send disconnect: Connection reset
+PS C:\Users\10839967\Downloads>  ssh -i "R_key.pem" ec2-user@ec2-44-203-16-181.compute-1.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sat Aug  9 04:33:23 2025 from 103.244.155.144
+[ec2-user@git ~]$ sudo su -
+Last login: Sat Aug  9 04:34:03 UTC 2025 on pts/1
+[root@git ~]# git remote -v
+fatal: not a git repository (or any of the parent directories): .git
+[root@git ~]# git remote add origin git@github.com:Reema-Mandal/DevOps.git
+fatal: not a git repository (or any of the parent directories): .git
+[root@git ~]# cd gitt
+[root@git gitt]# git remote add origin git@github.com:Reema-Mandal/DevOps.git
+[root@git gitt]# git remote -v
+origin  git@github.com:Reema-Mandal/DevOps.git (fetch)
+origin  git@github.com:Reema-Mandal/DevOps.git (push)
+[root@git gitt]# git branch
+* master
+[root@git gitt]# git push origin master
+The authenticity of host 'github.com (140.82.113.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 210 bytes | 210.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Reema-Mandal/DevOps.git
+ * [new branch]      master -> master
+[root@git gitt]#
