@@ -1,3 +1,94 @@
-i love devops
-fhgfjmgjg
-hghgjgk
+
+create extended partition of 5GIB then create 2 partition of 2gb and 3gb
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\10839967\Downloads> ssh -i "increase_server.pem" ec2-user@ec2-98-86-180-211.compute-1.amazonaws.com
+The authenticity of host 'ec2-98-86-180-211.compute-1.amazonaws.com (98.86.180.211)' can't be established.
+ED25519 key fingerprint is SHA256:9dCouyRB1pFympmDfhmb2EUUdug0NCeo9+D18EsT5PY.
+This host key is known by the following other names/addresses:
+    C:\Users\10839967/.ssh/known_hosts:56: ec2-44-200-158-133.compute-1.amazonaws.com
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-98-86-180-211.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Tue Aug 12 07:30:37 2025 from 103.244.155.144
+[ec2-user@ip-172-31-3-29 ~]$ sudo su -
+Last login: Tue Aug 12 07:01:19 UTC 2025 on pts/1
+[root@ip-172-31-3-29 ~]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        4.0M     0  4.0M   0% /dev
+tmpfs           475M     0  475M   0% /dev/shm
+tmpfs           190M  436K  190M   1% /run
+/dev/xvda1       20G  1.7G   19G   9% /
+tmpfs           475M     0  475M   0% /tmp
+/dev/xvda128     10M  1.3M  8.7M  13% /boot/efi
+tmpfs            95M     0   95M   0% /run/user/1000
+[root@ip-172-31-3-29 ~]# blkid
+/dev/xvda128: SEC_TYPE="msdos" UUID="0A45-DE8A" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="b49445c0-fd04-4205-b814-60d7234c99d3"
+/dev/xvda127: PARTLABEL="BIOS Boot Partition" PARTUUID="fe94459e-51c8-47f1-8099-83b1a7d957d3"
+/dev/xvda1: LABEL="/" UUID="096a1b2c-d815-4f9c-b224-dc88341d1513" BLOCK_SIZE="4096" TYPE="xfs" PARTLABEL="Linux" PARTUUID="3514fe78-b5f9-4d8e-9584-21d19d818c88"
+[root@ip-172-31-3-29 ~]# lsblk
+NAME      MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+xvda      202:0    0  20G  0 disk
+├─xvda1   202:1    0  20G  0 part /
+├─xvda127 259:0    0   1M  0 part
+└─xvda128 259:1    0  10M  0 part /boot/efi
+[root@ip-172-31-3-29 ~]# growpart /dev/xvda 1
+NOCHANGE: partition 1 is size 41918431. it cannot be grown
+[root@ip-172-31-3-29 ~]# growpart /dev/xvdbb
+growpart disk partition
+   rewrite partition table so that partition takes up all the space it can
+   options:
+    -h | --help       print Usage and exit
+         --fudge F    if part could be resized, but change would be
+                      less than 'F' bytes, do not resize (default: 1048576)
+    -N | --dry-run    only report what would be done, show new 'sfdisk -d'
+    -v | --verbose    increase verbosity / debug
+    -u | --update  R  update the the kernel partition table info after growing
+                      this requires kernel support and 'partx --update'
+                      R is one of:
+                       - 'auto'  : [default] update partition if possible
+                       - 'force' : try despite sanity checks (fail on failure)
+                       - 'off'   : do not attempt
+                       - 'on'    : fail if sanity checks indicate no support
+
+   Example:
+    - growpart /dev/sda 1
+      Resize partition 1 on /dev/sda
+must supply partition-number
+[root@ip-172-31-3-29 ~]# xfs_growfs -d /
+meta-data=/dev/xvda1             isize=512    agcount=6, agsize=1047040 blks
+         =                       sectsz=4096  attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1
+data     =                       bsize=4096   blocks=5239803, imaxpct=25
+         =                       sunit=128    swidth=128 blks
+naming   =version 2              bsize=16384  ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=4096  sunit=4 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data size unchanged, skipping
+[root@ip-172-31-3-29 ~]#
+Broadcast message from root@ip-172-31-3-29.ec2.internal (Tue 2025-08-12 08:57:58 UTC):
+
+The system will reboot now!
+
+
+Broadcast message from root@ip-172-31-3-29.ec2.internal (Tue 2025-08-12 08:57:58 UTC):
+
+The system will reboot now!
+
+Connection to ec2-98-86-180-211.compute-1.amazonaws.com closed by remote host.
+Connection to ec2-98-86-180-211.compute-1.amazonaws.com closed.
+PS C:\Users\10839967\Downloads>
